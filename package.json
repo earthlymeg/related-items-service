@@ -1,0 +1,49 @@
+{
+  "name": "related-items-service",
+  "version": "1.0.0",
+  "description": "Related Items widget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "react-dev": "webpack -d --watch",
+    "start": "cd server/ && nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acme-Coding-Co/related-items-service.git"
+  },
+  "author": "Meg Shulmister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Acme-Coding-Co/related-items-service/issues"
+  },
+  "homepage": "https://github.com/Acme-Coding-Co/related-items-service#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.13.0",
+    "eslint-plugin-react": "^7.21.5",
+    "postcss": "^8.1.7",
+    "postcss-loader": "^4.0.4",
+    "style-loader": "^2.0.0",
+    "webpack": "4.44.1",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.14.3",
+    "react": "^17.0.1",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^17.0.1",
+    "url-loader": "^4.1.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
