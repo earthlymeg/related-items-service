@@ -1,21 +1,21 @@
-import React from "react";
-import ProductCard from "./ProductCard.jsx"
+/* eslint-disable react/prefer-stateless-function */
+import React from 'react';
+import ProductCard from './ProductCard.jsx';
 
 class App extends React.Component {
-
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
-    super(props);    
+    super(props);
   }
 
   render() {
-    return(
+    return (
 
-        <div>
+      <div>
         <ProductCard />
-        </div>
-    )
-  }  
-    
+      </div>
+    );
+  }
 }
 
 export default App;
