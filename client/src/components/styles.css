@@ -42,9 +42,9 @@ img {
     
 }
 
-/* .star {
-  display: flex;
-} */
+.star {
+  float: right;
+}
 
 /* .star input {
 

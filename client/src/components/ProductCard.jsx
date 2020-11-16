@@ -8,7 +8,7 @@ function ProductCard({ pic }) {
       <div className="star">
         <i className="icon-star-empty" />
       </div>
-      <div className="card">
+      <div className="card" data-toggle="modal" data-target="#glassAnimals">
         <div className="overflow">
           <img src={pic} alt="" />
         </div>
@@ -23,6 +23,30 @@ function ProductCard({ pic }) {
           </p>
         </div>
       </div>
+      {/* <button type="button" className="btn btn-danger" >
+        Glass Animals Info
+      </button> */}
+
+      <div className="modal fade" id="glassAnimals" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Glass Animals</h5>
+              <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="modal-body">
+              ...
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-danger">Track Artist</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
