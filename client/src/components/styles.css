@@ -42,22 +42,46 @@ img {
     
 }
 
+ .parent {
+  position: relative;
+  z-index: 1;
+} 
+
 .star {
-  float: right;
-}
-
-/* .star input {
-
-  display: none;
-} */
+  position: absolute;
+  top: 6px;
+  right: 11px;
+  z-index: 2;
+  size: large;
+  cursor: pointer;
+  color: white;
+} 
 
 .star label {
   /* display: block; */
   cursor: pointer;
-  width: 50px;
-  background:black;
+  width: 25px;
 }
 
 .star label:before {
+  font-family: "fontAwesome";
   content: '\f005';
+  color: white;
+}
+
+.star label:after {
+  font-family: "fontAwesome";
+  content: '\f005';
+  color: red;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  transition: .5s;
+  opacity: 0;
+}
+
+.star label:hover:after,
+.star input:checked label:after
+{
+opacity: 1;
 }

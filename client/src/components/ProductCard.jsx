@@ -4,9 +4,9 @@ import './styles.css';
 // eslint-disable-next-line react/prop-types
 function ProductCard({ pic }) {
   return (
-    <div>
+    <div className="parent">
       <div className="star">
-        <i className="icon-star-empty" />
+        <label />
       </div>
       <div className="card" data-toggle="modal" data-target="#glassAnimals">
         <div className="overflow">
@@ -23,9 +23,6 @@ function ProductCard({ pic }) {
           </p>
         </div>
       </div>
-      {/* <button type="button" className="btn btn-danger" >
-        Glass Animals Info
-      </button> */}
 
       <div className="modal fade" id="glassAnimals" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
