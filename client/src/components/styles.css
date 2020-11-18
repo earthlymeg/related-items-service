@@ -86,3 +86,24 @@ img {
 {
 opacity: 1;
 }
+
+.modal-title {
+  font-size: small;
+}
+
+h5 {
+  font-size: 14px !important;
+}
+
+.product-col {
+  margin-left: -1em;
+}
+
+.product-col-right {
+  margin-right: -8em !important;
+}
+
+.modal-dialog {
+  width: 25% !important;
+  border-radius: 0 !important;
+}

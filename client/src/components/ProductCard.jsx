@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import './styles.css';
 
@@ -7,7 +9,7 @@ class ProductCard extends React.Component {
     super(props);
     // eslint-disable-next-line no-unused-vars
     // eslint-disable-next-line react/prop-types
-    const { pic } = this.props;
+    // const { pic } = this.props;
     this.state = {
       clicked: false,
       color: 'white',
@@ -41,7 +43,7 @@ class ProductCard extends React.Component {
           >
             <label />
           </div>
-          <div className="card" data-toggle="modal" data-target="#glassAnimals">
+          <div className="card" data-toggle="modal" data-target="#comparison">
             <div className="overflow">
               <img src={this.props.pic} alt="" />
             </div>
@@ -58,27 +60,45 @@ class ProductCard extends React.Component {
           </div>
         </div>
 
-        <div className="modal fade" id="glassAnimals" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="comparison" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Glass Animals</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                ...
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-danger">Track Artist</button>
+                <div className="container">
+                  <h5 className="modal-title" id="exampleModalLabel"><small>Comparing</small></h5>
+                  <div className="modal-body">
+
+                    <div className="row">
+
+                      <div className="col float-left product-col">
+                        <h5>Item1</h5>
+                      </div>
+                      <div className="col float-right product-col-right">
+                        <h5>Item2</h5>
+                      </div>
+                    </div>
+                    <div classNam="row">
+
+                      <div className="col">
+                        ✅
+                      </div>
+                      <div className="col">
+                        is nice
+                      </div>
+                      <div className="col">
+                        ✅
+                      </div>
+
+                    </div>
+                  </div>
+                  <div className="modal-footer" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
     );
   }
 }
