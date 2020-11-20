@@ -26,23 +26,28 @@ class Cards extends Component {
       <div className="container-fluid d-flex justify-content-center">
         <div className="card-deck">
 
-          {productsArr && productsArr.map((product) => (
-            <div>
-              <ProductCard
-                productName={product.name}
-                default_price={product.default_price}
-                category={product.category}
-              />
-            </div>
-          ))}
-          {/* <div className="col-md-4">
-            <ProductCard pic={chris} />
-          </div> */}
+          {productsArr && productsArr.map((product) => {
+            if (product.id !== 2) {
+              axios.get(`http://52.26.193.201:3000/products/${product.id}/styles`)
+                .then((res) => console.log(res.data.results[1].photos))
+                .catch((err) => console.log('err at product style get request'));
 
+              return (
+              <div>
+                <ProductCard
+                  productName={product.name}
+                  default_price={product.default_price}
+                  category={product.category}
+                />
+              </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
   }
 }
+
 
 export default Cards;
