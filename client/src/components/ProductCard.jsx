@@ -35,27 +35,30 @@ class ProductCard extends React.Component {
   render() {
     return (
       <div>
-        <div className="parent">
-          <div
-            className="star"
-            style={{ color: this.state.color }}
-            onClick={this.starClicked}
-          >
-            <label />
-          </div>
-          <div className="card" data-toggle="modal" data-target="#comparison">
-            <div className="overflow">
-              <img src={this.props.pic} alt="" />
-            </div>
-            <div className="card-body text-dark">
+        <div
+          className="star"
+          style={{ color: this.state.color }}
+          onClick={this.starClicked}
+        >
+          <label />
+        </div>
+        <div className="card" data-toggle="modal" data-target="#comparison">
+        <img class="card-img-top" src="..." alt="Card image cap">
+          <div className="card-body d-flex flex-column text-dark">
 
-              <h4 className="card-title">Card Title</h4>
-              <p className="card-text">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. \
-                Ex rem repellat omnis totam tempore iure magni, \
-                saepe ut error iusto doloremque nam? \
-                Eligendi beatae laboriosam libero illo soluta dolorum a.
-              </p>
+            <h4 className="card-title"><small>{this.props.category}</small></h4>
+            <p className="card-text">
+              <strong>{this.props.productName}</strong>
+              <br />
+              $
+              <small>{this.props.default_price}</small>
+            </p>
+            <div className="d-flex align-items-end">
+              <i className="fa fa-star" />
+              <i className="fa fa-star" />
+              <i className="fa fa-star" />
+              <i className="fa fa-star" />
+              <i className="fa fa-star-half" />
             </div>
           </div>
         </div>
@@ -63,42 +66,109 @@ class ProductCard extends React.Component {
         <div className="modal fade" id="comparison" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
-              <div className="modal-header">
-                <div className="container">
-                  <h5 className="modal-title" id="exampleModalLabel"><small>Comparing</small></h5>
-                  <div className="modal-body">
+              <div className="container">
+                <h5 className="modal-title" id="exampleModalLabel"><small>Comparing</small></h5>
+                <div className="modal-body">
 
-                    <div className="row">
+                  <div className="row">
 
-                      <div className="col float-left product-col">
-                        <h5>Item1</h5>
+                    <div className="col-4 product-col">
+                      <h5>Item1</h5>
+                      <div className="row test">
+                        ✅
                       </div>
-                      <div className="col float-right product-col-right">
-                        <h5>Item2</h5>
+                      <div className="row test">
+                        💖
+                      </div>
+                      <div className="row test">
+                        🎸
+                      </div>
+                      <div className="row test">
+                        🍆
+                      </div>
+                      <div className="row test">
+                        ☀️
+                      </div>
+                      <div className="row test">
+                        🥃
+                      </div>
+                      <div className="row test">
+                        (｡◕‿◕｡)
+                      </div>
+                      <div className="row test">
+                        🍆
                       </div>
                     </div>
-                    <div classNam="row">
-
-                      <div className="col">
+                    <div className="col-4 justify-content-center mt-auto mine">
+                      <div className="row justify-content-center">
+                          &nbsp;
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>love</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>Free-Range</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>Trendy</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>Comfy-Approved</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>10/10 cows approve this purchase</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>Vegan</small>
+                        <br />
+                      </div>
+                      <div className="row justify-content-center texts">
+                        <small>guaranteed to make your ex jealous</small>
+                        <br />
+                      </div>
+                    </div>
+                    <div className="col-4 product-col-right">
+                      <h5>Item2</h5>
+                      <div className="row right-emojis">
                         ✅
                       </div>
-                      <div className="col">
-                        is nice
+                      <div className="row right-emojis">
+                        💖
                       </div>
-                      <div className="col">
-                        ✅
+                      <div className="row right-emojis">
+                        🎸
                       </div>
-
+                      <div className="row right-emojis">
+                        🍆
+                      </div>
+                      <div className="row right-emojis">
+                        ☀️
+                      </div>
+                      <div className="row right-emojis">
+                        🥃
+                      </div>
+                      <div className="row right-emojis">
+                        (｡◕‿◕｡)
+                      </div>
+                      <div className="row right-emojis">
+                        🍆
+                      </div>
                     </div>
                   </div>
-                  <div className="modal-footer" />
+                  <div className="modal-footer">
+                    footer
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     );
   }
 }

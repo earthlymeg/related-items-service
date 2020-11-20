@@ -1,28 +1,44 @@
+/* eslint-disable react/jsx-key */
 import React, { Component } from 'react';
+import axios from 'axios';
 import ProductCard from './ProductCard.jsx';
-import chris from '../pics/chris.png';
-import gordo from '../pics/gordo.png';
-import ty from '../pics/ty.png';
 
 class Cards extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      productsArr: '',
+    };
+  }
+
+  componentDidMount() {
+    axios.get('http://52.26.193.201:3000/products/list')
+      .then((res) => this.setState({
+        productsArr: res.data,
+      }))
+      .catch((err) => console.log('err at get request client'));
   }
 
   render() {
+    const { productsArr } = this.state;
+
     return (
       <div className="container-fluid d-flex justify-content-center">
-        <div className="row">
-          <div className="col-md-4">
+        <div className="card-deck">
+
+          {productsArr && productsArr.map((product) => (
+            <div>
+              <ProductCard
+                productName={product.name}
+                default_price={product.default_price}
+                category={product.category}
+              />
+            </div>
+          ))}
+          {/* <div className="col-md-4">
             <ProductCard pic={chris} />
-          </div>
-          <div className="col-md-4">
-            <ProductCard pic={gordo} />
-          </div>
-          <div className="col-md-4">
-            <ProductCard pic={chris} />
-          </div>
+          </div> */}
+
         </div>
       </div>
     );
