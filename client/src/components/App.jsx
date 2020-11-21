@@ -9,6 +9,26 @@ class App extends React.Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
+    this.state = {
+      tempCard: {
+        category: '',
+        name: '',
+        price: '',
+        thumbnail: '',  
+      }
+    };
+    this.handleAddCard = this.handleAddCard.bind(this);
+  }
+
+  handleAddCard() {
+    this.setState({
+      tempCard: {
+        category: arguments[0],
+        name: arguments[1],
+        price: arguments[2],
+        thumbnail: arguments[3],  
+      }
+    });
   }
 
   render() {
@@ -16,9 +36,13 @@ class App extends React.Component {
 
       <div>
         <div className="App">Related Items</div>
-        <Cards />
+        <Cards 
+        handleAddCard={this.handleAddCard}
+        />
         <div className="my-closet">My Closet</div>
-        <Closet />
+        <Closet 
+        tempCard={this.state.tempCard}
+        />
       </div>
     );
   }

@@ -45,7 +45,10 @@ class ProductCard extends React.Component {
         >
           <label />
         </div>
-        <div className="card" data-toggle="modal" data-target="#comparison">
+        <div className="card" 
+          data-toggle="modal" 
+          data-target="#comparison"
+          >
           <img className="card-img-top" src={this.props.photo && this.props.photo.results[0].photos[0].thumbnail_url} alt="Card image cap" />
           <div className="card-body text-dark">
 
@@ -56,6 +59,7 @@ class ProductCard extends React.Component {
               $
               <small>{this.props.default_price}</small>
             </p>
+            <button type="button" className="btn btn-primary" onClick={ () => this.props.handleAddCard(this.props.category, this.props.productName, this.props.default_price, this.props.photo && this.props.photo.results[0].photos[0].thumbnail_url)}>Add to closet</button>
             <div className="d-flex align-items-end stars-div">
               <i className="fa fa-star" />
               <i className="fa fa-star" />

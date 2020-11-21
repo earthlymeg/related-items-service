@@ -86,6 +86,7 @@ class Cards extends Component {
                   default_price={product.default_price}
                   category={product.category}
                   photo={productStyles[index]}
+                  handleAddCard={this.props.handleAddCard}
                 />
               </div>
             );
