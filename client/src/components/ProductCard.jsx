@@ -43,7 +43,7 @@ class ProductCard extends React.Component {
           <label />
         </div>
         <div className="card" data-toggle="modal" data-target="#comparison">
-          {/* <img class="card-img-top" src="..." alt="Card image cap"> */}
+          {/* <img className="card-img-top" src={this.props.thumbnail} alt="Card image cap" /> */}
           <div className="card-body d-flex flex-column text-dark">
 
             <h4 className="card-title"><small>{this.props.category}</small></h4>
