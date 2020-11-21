@@ -14,6 +14,7 @@ class Cards extends Component {
       price: '',
       allProduct: [],
       isLoading: true,
+      productStyles: [],
     };
   }
 
@@ -25,10 +26,13 @@ class Cards extends Component {
       .then(() => {
         const allProducts = [];
         const axiosRequests = [];
+        const photoAxiosRequests = [];
+
         const productArr = this.state.productsArr;
         for (let i = 0; i < productArr.length; i++) {
           const currentID = productArr[i];
           axiosRequests.push(axios.get(`http://52.26.193.201:3000/products/${currentID}`));
+          photoAxiosRequests.push(axios.get(`http://52.26.193.201:3000/products/${currentID}/styles`));
         }
 
         Promise.all(axiosRequests)
@@ -36,7 +40,15 @@ class Cards extends Component {
             const responsesData = responsesArr.map((res) => res.data);
             this.setState({
               allProduct: responsesData,
-            }, () => console.log(this.state.allProduct));
+            });
+          });
+
+        Promise.all(photoAxiosRequests)
+          .then((responsesArr) => {
+            const styleData = responsesArr.map((res) => res.data);
+            this.setState({
+              productStyles: styleData,
+            });
           });
       })
       .then((res) => this.setState({
@@ -45,11 +57,6 @@ class Cards extends Component {
       .catch((err) => console.log('err at get request client'));
   }
 
-  // make array of thumbnails
-  // iterate over all products
-  // axios.get(`http://52.26.193.201:3000/products/${product.id}/styles`)
-  //   .then((res) => console.log(res.data.results[1].photos[0].thumbnail_url))
-  //   .catch((err) => console.log('err at product style get request'));
 
   render() {
     // const { allProduct, isLoading } = this.state;
@@ -57,21 +64,32 @@ class Cards extends Component {
       return <div>Loading...</div>;
     }
     return (
+
       <div className="container-fluid d-flex justify-content-center">
         <div className="card-deck">
-          
-          {this.state.allProduct.map((product) => 
-          
-           <div>
-             <ProductCard 
-             productName={product.name}
-             default_price={product.default_price}
-             category={product.category}
-             />
-           </div> 
-          
-          
-          )}
+
+          {this.state.allProduct.map((product) => {
+            var idToFind = product.id;
+            var index;
+            const { productStyles } = this.state;
+            for (var i = 0; i < productStyles.length; i++) {
+              // console.log(productStyles[i].product_id === idToFind.toString());
+              if (productStyles[i].product_id === idToFind.toString()) {
+                index = i;
+              }
+            }
+
+            return (
+              <div>
+                <ProductCard
+                  productName={product.name}
+                  default_price={product.default_price}
+                  category={product.category}
+                  photo={productStyles[index]}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     );

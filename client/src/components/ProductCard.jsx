@@ -33,6 +33,9 @@ class ProductCard extends React.Component {
   }
 
   render() {
+    // if (this.props.photo !== undefined) {
+    //   console.log('props from product card', this.props.photo.results[0].photos[0].thumbnail_url)
+    // }
     return (
       <div>
         <div
@@ -43,8 +46,8 @@ class ProductCard extends React.Component {
           <label />
         </div>
         <div className="card" data-toggle="modal" data-target="#comparison">
-          {/* <img className="card-img-top" src={this.props.thumbnail} alt="Card image cap" /> */}
-          <div className="card-body d-flex flex-column text-dark">
+          <img className="card-img-top" src={this.props.photo && this.props.photo.results[0].photos[0].thumbnail_url} alt="Card image cap" />
+          <div className="card-body text-dark">
 
             <h4 className="card-title"><small>{this.props.category}</small></h4>
             <p className="card-text">
@@ -53,7 +56,7 @@ class ProductCard extends React.Component {
               $
               <small>{this.props.default_price}</small>
             </p>
-            <div className="d-flex align-items-end">
+            <div className="d-flex align-items-end stars-div">
               <i className="fa fa-star" />
               <i className="fa fa-star" />
               <i className="fa fa-star" />
