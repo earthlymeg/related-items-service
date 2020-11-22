@@ -21,6 +21,7 @@ class App extends React.Component {
   }
 
   handleAddCard() {
+    
     this.setState({
       tempCard: {
         category: arguments[0],
