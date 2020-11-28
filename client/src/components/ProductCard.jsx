@@ -12,7 +12,7 @@ class ProductCard extends React.Component {
     // const { pic } = this.props;
     this.state = {
       clicked: false,
-      color: 'white',
+      color: 'black',
     };
     this.starClicked = this.starClicked.bind(this);
   }
@@ -22,7 +22,7 @@ class ProductCard extends React.Component {
     if (clicked) {
       this.setState({
         clicked: false,
-        color: 'white',
+        color: 'black',
       });
     } else {
       this.setState({
@@ -34,16 +34,19 @@ class ProductCard extends React.Component {
 
   render() {
     return (
-      <div>
-        {/* <div
-          className="star"
+      <div className="parent">
+
+        {/* <button type="button" className="btn btn-primary">Add to closet</button> */}
+        <div className="star"
           style={{ color: this.state.color }}
-          onClick={this.starClicked}
+          onClick={() => {
+              this.props.handleAddCard(this.props.category, this.props.productName, this.props.default_price, this.props.photo && this.props.photo.results[0].photos[0].thumbnail_url);
+              this.starClicked();
+            }
+          }
         >
           <label />
-        </div> */}
-        <button type="button" className="btn btn-primary" onClick={() => this.props.handleAddCard(this.props.category, this.props.productName, this.props.default_price, this.props.photo && this.props.photo.results[0].photos[0].thumbnail_url)}>Add to closet</button>
-
+        </div>
         <div
           className="card"
           data-toggle="modal"
@@ -69,7 +72,7 @@ class ProductCard extends React.Component {
           </div>
         </div>
 
-        <div className="modal fade" id="comparison" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {/* <div className="modal fade" id="comparison" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="container">
@@ -173,7 +176,7 @@ class ProductCard extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

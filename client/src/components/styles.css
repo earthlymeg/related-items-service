@@ -1,6 +1,9 @@
+
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+margin: 0; 
+height: 100%; 
+overflow: hidden;
+max-width: 100%;
 }
 
 
@@ -12,7 +15,7 @@ body {
   color: grey;
   position:absolute !important;
   left: 100px !important;
-  top: 60px !important;
+  top: 25px !important;
   font-size: large !important;
 }
 
@@ -52,7 +55,7 @@ body {
 }
 
 .container-fluid {
-  padding-top: 6rem;
+  padding-top: 3rem;
 }
 
 img {
@@ -72,14 +75,12 @@ img {
 
  .parent {
   position: relative;
-  z-index: 1;
-  width: 75px !important;
 } 
 
 .star {
   position: absolute;
   top: 6px;
-  right: 11px;
+  right: 16px;
   z-index: 2;
   size: large;
   cursor: pointer;
@@ -175,6 +176,6 @@ h5 {
   color: grey;
   position:absolute !important;
   left: 100px !important;
-  top: 400px !important;
+  top: 350px !important;
   font-size: large !important;
 }
