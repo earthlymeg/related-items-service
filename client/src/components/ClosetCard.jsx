@@ -8,7 +8,7 @@ function ClosetCard(props) {
       <button className="btn btn-primary float-right" onClick={() => { props.handleDeleteCard(props.name); }}>Delete</button>
 
       <img className="card-img-top" src={props.thumbnail} alt="Card image cap" />
-      <div className="card-body">
+      <div className="card-body text-dark">
         <h5 className="card-title"><small>{props.category}</small></h5>
         <p className="card-text">
           <strong>{props.name}</strong>

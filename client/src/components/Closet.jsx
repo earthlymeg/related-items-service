@@ -13,9 +13,12 @@ class Closet extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.tempCard !== this.props.tempCard) {
-      this.setState({
-        cardsInCloset: [...this.state.cardsInCloset, this.props.tempCard],
-      });
+
+      if (this.state.cardsInCloset.some(person => person.name === this.props.tempCard.name) === false) {
+        this.setState({
+          cardsInCloset: [...this.state.cardsInCloset, this.props.tempCard],
+        });
+    }
     }
   }
 
