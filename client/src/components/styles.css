@@ -7,10 +7,6 @@ max-width: 100%;
 }
 
 
-body {
-    background: radial-gradient(#f9f7cf, #ffffff, #f9f7cf);
-}
-
 .App {
   color: grey;
   position:absolute !important;
