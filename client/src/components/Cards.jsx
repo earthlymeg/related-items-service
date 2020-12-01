@@ -57,7 +57,6 @@ class Cards extends Component {
       .catch((err) => console.log('err at get request client'));
   }
 
-
   render() {
     // const { allProduct, isLoading } = this.state;
     if (this.state.isLoading) {
