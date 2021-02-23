@@ -2,7 +2,7 @@
 html, body {
 margin: 0; 
 height: 100%; 
-overflow: hidden;
+/* overflow: hidden; */
 max-width: 100%;
 }
 
@@ -15,11 +15,12 @@ max-width: 100%;
   font-size: large !important;
 }
 
-.card {
+.product-card {
 
   width: 12rem;
   height: 18rem;
   position: relative !important;
+  padding: 5px !important;
 }
 
 .card-title {
@@ -27,7 +28,7 @@ max-width: 100%;
   margin: 0 !important;
 }
 
-.card:hover {
+.product-card:hover {
     
   box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253) !important;
 }
@@ -75,10 +76,10 @@ img {
 
 .star {
   position: absolute;
-  top: 6px;
-  right: 16px;
+  top: 8px;
+  right: 10px;
   z-index: 2;
-  size: large;
+  font-size: 20px;
   cursor: pointer;
 } 
 
@@ -100,7 +101,7 @@ img {
 .star label:after {
   font-family: "fontAwesome";
   content: '\f005';
-  color: #f2dcbb;
+  color: #b60303;
   left: 0;
   position: absolute;
   top: 1px;
@@ -174,4 +175,19 @@ h5 {
   left: 100px !important;
   top: 350px !important;
   font-size: large !important;
+}
+
+.fa-minus-circle{
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 2;
+  font-size: 20px;
+  cursor: pointer;
+  font-size: large;
+  color:#c30707;
+}
+
+.fa-minus-circle:hover{
+  box-shadow: 5px 10px 20px 1px rgba(0,0,0,0.253) !important;
 }

@@ -48,7 +48,7 @@ class ProductCard extends React.Component {
           <label />
         </div>
         <div
-          className="card"
+          className="product-card"
           data-toggle="modal"
           data-target="#comparison"
         >

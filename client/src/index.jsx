@@ -8,4 +8,4 @@ import Cards from "./components/Cards.jsx";
 
 
 
-ReactDom.render(<App />, document.getElementById("app"));
+ReactDom.render(<App />, document.getElementById("related-items-service"));

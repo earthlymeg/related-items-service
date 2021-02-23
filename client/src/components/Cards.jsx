@@ -9,7 +9,7 @@ class Cards extends Component {
     this.state = {
       productsArr: [],
       imageURL: '',
-      currentProduct: 3,
+      currentProduct: 8,
       productName: '',
       price: '',
       allProduct: [],
