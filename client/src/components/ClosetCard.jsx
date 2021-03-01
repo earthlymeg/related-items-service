@@ -4,7 +4,7 @@ import './styles.css';
 function ClosetCard(props) {
   // console.log(props);
   return (
-    <div className="product-card">
+    <div className="product-card closet">
 
       {/* <button className="btn btn-primary float-right" onClick={() => { props.handleDeleteCard(props.name); }}>Delete</button> */}
       <img className="card-img-top" src={props.thumbnail} alt="Card image cap" />
