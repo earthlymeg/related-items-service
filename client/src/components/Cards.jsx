@@ -72,7 +72,6 @@ class Cards extends Component {
             {/* Active view of carousel, iterate for 1st 5 items */}
             <div class="carousel-item active">
               <div className="row">
-                {console.log('api', this.state.allProduct)}
                 {this.state.allProduct.length > 0 && this.state.allProduct.map((product, index) => {
                   while (index < 5) {
                   var idToFind = product.id;
@@ -84,7 +83,6 @@ class Cards extends Component {
                       index = i;
                     }
                   }
-
                   return (
                     <div className="col-md-auto">
                       <ProductCard
@@ -94,11 +92,11 @@ class Cards extends Component {
                         photo={productStyles[index]}
                         handleAddCard={this.props.handleAddCard}
                       />
-                      {/* <div className="test-box"></div> */}
                     </div>
                   );
 
                   }
+
                 })}
               </div>
             </div>
@@ -106,15 +104,32 @@ class Cards extends Component {
 
             <div class="carousel-item">
               <div className="row">
-                <div className="col-md-4">
-                  <div className="test-boxx"></div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-boxx"></div>
-                </div>
-                <div className="col-md-4">
-                  <div className="test-boxx"></div>
-                </div>
+              {this.state.allProduct.length > 0 && this.state.allProduct.map((product, index) => {
+                  if (index >= 5) {
+                  var idToFind = product.id;
+                  var index;
+                  const { productStyles } = this.state;
+                  for (var i = 0; i < productStyles.length; i++) {
+                    // console.log(productStyles[i].product_id === idToFind.toString());
+                    if (productStyles[i].product_id === idToFind.toString()) {
+                      index = i;
+                    }
+                  }
+                  return (
+                    <div className="col-md-auto">
+                      <ProductCard
+                        productName={product.name}
+                        default_price={product.default_price}
+                        category={product.category}
+                        photo={productStyles[index]}
+                        handleAddCard={this.props.handleAddCard}
+                      />
+                    </div>
+                  );
+
+                  }
+                  
+                })}
               </div>
             </div>
 
