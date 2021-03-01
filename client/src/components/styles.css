@@ -217,13 +217,32 @@ h5 {
 }
 
 .carousel-control-next-icon {
-  height: 300px !important; 
-  /* margin-top: -50px !important; */
+  /* height: 100px !important;  */
+  margin-top: -80px !important;
   /* background-color: rgb(255, 0, 0) !important; */
 }
 
 .carousel-control-next{
   width: 100px;
   /* background-color: yellow !important; */
-  margin-right: -100px !important;
+  margin-right: -120px !important;
+}
+
+.carousel-control-prev-icon {
+  /* height: 100px !important;  */
+  margin-top: -80px !important;
+  /* background-color: rgb(255, 0, 0) !important; */
+}
+
+.carousel-control-prev{
+  width: 100px;
+  /* background-color: yellow !important; */
+  margin-left: -120px !important;
+}
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 4s;
+  transition-timing-function:linear;
 }
