@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react-dev": "webpack -d --watch",
-    "start": "cd server && nodemon index.js"
+    "start": "cd server && node index.js"
   },
   "repository": {
     "type": "git",
