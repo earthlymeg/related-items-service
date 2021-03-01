@@ -36,11 +36,11 @@ class App extends React.Component {
     return (
 
       <div>
-        <div className="App">Related Items</div>
+        <div className="App"></div>
         <Cards 
         handleAddCard={this.handleAddCard}
         />
-        <div className="my-closet">My Closet</div>
+        <div className="my-closet"></div>
         <Closet 
         tempCard={this.state.tempCard}
         />

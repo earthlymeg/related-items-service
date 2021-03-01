@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard.jsx';
-
+import './styles.css'
 class Cards extends Component {
   constructor(props) {
     super(props);
@@ -65,32 +65,76 @@ class Cards extends Component {
     return (
 
       <div className="container-fluid d-flex justify-content-center">
-        <div className="card-deck">
+        <div id="carouselExampleIndicators" class="carousel carousel-fade" data-ride="carousel">
+         
+          <div class="carousel-inner">
 
-          {this.state.allProduct.map((product) => {
-            var idToFind = product.id;
-            var index;
-            const { productStyles } = this.state;
-            for (var i = 0; i < productStyles.length; i++) {
-              // console.log(productStyles[i].product_id === idToFind.toString());
-              if (productStyles[i].product_id === idToFind.toString()) {
-                index = i;
-              }
-            }
+            {/* Active view of carousel, iterate for 1st 5 items */}
+            <div class="carousel-item active">
+              <div className="row">
+                {console.log('api', this.state.allProduct)}
+                {this.state.allProduct.length > 0 && this.state.allProduct.map((product, index) => {
+                  while (index < 5) {
+                  var idToFind = product.id;
+                  var index;
+                  const { productStyles } = this.state;
+                  for (var i = 0; i < productStyles.length; i++) {
+                    // console.log(productStyles[i].product_id === idToFind.toString());
+                    if (productStyles[i].product_id === idToFind.toString()) {
+                      index = i;
+                    }
+                  }
 
-            return (
-              <div>
-                <ProductCard
-                  productName={product.name}
-                  default_price={product.default_price}
-                  category={product.category}
-                  photo={productStyles[index]}
-                  handleAddCard={this.props.handleAddCard}
-                />
+                  return (
+                    <div className="col-md-auto">
+                      <ProductCard
+                        productName={product.name}
+                        default_price={product.default_price}
+                        category={product.category}
+                        photo={productStyles[index]}
+                        handleAddCard={this.props.handleAddCard}
+                      />
+                      {/* <div className="test-box"></div> */}
+                    </div>
+                  );
+
+                  }
+                })}
               </div>
-            );
-          })}
+            </div>
+
+
+            <div class="carousel-item">
+              <div className="row">
+                <div className="col-md-4">
+                  <div className="test-boxx"></div>
+                </div>
+                <div className="col-md-4">
+                  <div className="test-boxx"></div>
+                </div>
+                <div className="col-md-4">
+                  <div className="test-boxx"></div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
+
+
+
+
+
       </div>
     );
   }
